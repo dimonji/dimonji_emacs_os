@@ -1,0 +1,1 @@
+/home/furzenko/.emacs.d/dist/yasnippet/yasnippet.el

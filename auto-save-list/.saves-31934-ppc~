@@ -1,7 +1,9 @@
-/home/furzenko/.emacs.d/lib/autocomplete.el
-/home/furzenko/.emacs.d/lib/#autocomplete.el#
+/home/furzenko/.emacs.d/lib/yasnippet.el
+/home/furzenko/.emacs.d/lib/#yasnippet.el#
 /home/furzenko/.emacs.d/init/global.el
 /home/furzenko/.emacs.d/init/#global.el#
+/home/furzenko/.emacs.d/lib/autocomplete.el
+/home/furzenko/.emacs.d/lib/#autocomplete.el#
 /home/furzenko/.emacs.d/init.el
 /home/furzenko/.emacs.d/#init.el#
 /home/furzenko/.emacs.d/installation.sh
