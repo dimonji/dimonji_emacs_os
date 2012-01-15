@@ -1,1 +1,1 @@
-/home/furzenko/.emacs.d/dist/yasnippet/yasnippet-debug.el
+../../dist/yasnippet/yasnippet-debug.el
