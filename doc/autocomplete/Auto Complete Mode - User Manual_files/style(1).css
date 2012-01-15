@@ -1,0 +1,52 @@
+body {
+    margin: 1em;
+}
+
+h1 {
+  padding: 0.1em 0.5em 0.3em 0.5em;
+}
+
+h1, h2, h3 {
+  margin-top: 1em;
+  padding: 0.2em;
+  border-bottom: 4px solid gray;
+}
+
+h3 {
+  border-bottom: 2px solid gray;
+}
+
+pre {
+  margin: 0.5em 2em;
+  padding: 0.5em;
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
+
+img {
+  border: 0;
+}
+
+#header {
+  float: right;
+  margin-left: 1em;
+  padding: 0.5em;
+  background-color: #eef;
+  border: 1px solid gray;
+}
+
+#header ul {
+  padding-left: 1.5em;
+}
+
+#header li {
+}
+
+#content {
+  padding: 0 1em;
+}
+
+#footer {
+  text-align: right;
+  clear: both;
+}

@@ -1,0 +1,1423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0050)http://cx4a.org/software/auto-complete/manual.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Auto Complete Mode - User Manual</title>
+<link rel="stylesheet" type="text/css" href="./Auto Complete Mode - User Manual_files/style.css">
+<script type="text/javascript" async="" src="./Auto Complete Mode - User Manual_files/ga.js"></script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19236027-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="./Auto Complete Mode - User Manual_files/style(1).css">
+</head>
+<body>
+
+<h1 id="Auto_Complete_Mode_User_Manual">Auto Complete Mode User Manual</h1><div id="header"><ul>
+<li><a href="http://cx4a.org/">Top</a></li>
+<li><a href="http://cx4a.org/#Softwares">Softwares</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/">Auto Complete Mode</a></li>
+<li><a href="http://cx4a.org/software/rsense/">RSense</a></li>
+<li><a href="http://cx4a.org/software/gccsense/">GCCSense</a></li>
+<li><a href="http://cx4a.org/repo/pyparser.git/">PyParser</a></li>
+<li><a href="http://cx4a.org/repo/undohist.git/">Undo History</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/#Hacks">Hacks</a>
+<ul>
+<li><a href="http://cx4a.org/hack/emacs-native-profiler.html">Emacs Native Profiler</a></li>
+<li><a href="http://cx4a.org/hack/emacs-regexp-extension.html">Emacs Regexp Extension</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/#Publications">Publications</a></li>
+</ul>
+
+<hr>
+
+<ul>
+<li>Contact
+<ul>
+<li><a href="mailto: tomo@cx4a.org">tomo@cx4a.org</a></li>
+<li><a href="http://twitter.com/m2ym/">Twitter</a></li>
+<li><a href="http://github.com/m2ym/">GitHub</a></li>
+</ul></li>
+</ul></div><div id="content">
+
+<p><a href="http://cx4a.org/software/auto-complete/index.html">Index</a></p>
+
+<p>[<a href="http://cx4a.org/software/auto-complete/manual.ja.html">Japanese</a>]</p>
+
+<hr>
+
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Introduction" rel="toc">1. Introduction</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Downloads" rel="toc">2. Downloads</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Installation" rel="toc">3. Installation</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Requirements" rel="toc">3.1. Requirements</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Installation_Script" rel="toc">3.2. Installation Script</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Manual_Installation" rel="toc">3.3. Manual Installation</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Check" rel="toc">3.4. Check</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Basic_Usage" rel="toc">4. Basic Usage</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Input_Characters" rel="toc">4.1. Input Characters</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_TAB" rel="toc">4.2. Completion by TAB</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_RET" rel="toc">4.3. Completion by RET</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Candidate_Selection" rel="toc">4.4. Candidate Selection</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Help" rel="toc">4.5. Help</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Summary" rel="toc">4.6. Summary</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Advanced_Usage" rel="toc">5. Advanced Usage</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#auto-complete_command" rel="toc">5.1. <code>auto-complete</code> command</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Fuzzy_Matching" rel="toc">5.2. Completion by Fuzzy Matching</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Filtering_Completion_Candidates" rel="toc">5.3. Filtering Completion Candidates</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Trigger_Key" rel="toc">5.4. Trigger Key</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Candidate_Suggestion" rel="toc">5.5. Candidate Suggestion</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Dictionary" rel="toc">5.6. Completion by Dictionary</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#User_Defined_Dictionary" rel="toc">5.6.1. User Defined Dictionary</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Major_Mode_Dictionary_and_Extension_Dictionary" rel="toc">5.6.2. Major Mode Dictionary and Extension Dictionary</a></li>
+</ul></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Source" rel="toc">6. Source</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Using_Source" rel="toc">6.1. Using Source</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Builtin_Sources" rel="toc">6.2. Builtin Sources</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-abbrev" rel="toc">6.2.1. <code>ac-source-abbrev</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-css-property" rel="toc">6.2.2. <code>ac-source-css-property</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-dictionary" rel="toc">6.2.3. <code>ac-source-dictionary</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-eclim" rel="toc">6.2.4. <code>ac-source-eclim</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-features" rel="toc">6.2.5. <code>ac-source-features</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-filename" rel="toc">6.2.6. <code>ac-source-filename</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-files-in-current-dir" rel="toc">6.2.7. <code>ac-source-files-in-current-dir</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-functions" rel="toc">6.2.8. <code>ac-source-functions</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-gtags" rel="toc">6.2.9. <code>ac-source-gtags</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-imenu" rel="toc">6.2.10. <code>ac-source-imenu</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-semantic" rel="toc">6.2.11. <code>ac-source-semantic</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-semantic-raw" rel="toc">6.2.12. <code>ac-source-semantic-raw</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-symbols" rel="toc">6.2.13. <code>ac-source-symbols</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-variables" rel="toc">6.2.14. <code>ac-source-variables</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-words-in-all-buffer" rel="toc">6.2.15. <code>ac-source-words-in-all-buffer</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-words-in-buffer" rel="toc">6.2.16. <code>ac-source-words-in-buffer</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-words-in-same-mode-buffers" rel="toc">6.2.17. <code>ac-source-words-in-same-mode-buffers</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-yasnippet" rel="toc">6.2.18. <code>ac-source-yasnippet</code></a></li>
+</ul></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Tips" rel="toc">7. Tips</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Not_to_complete_automatically" rel="toc">7.1. Not to complete automatically</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Not_to_show_completion_menu_automatically" rel="toc">7.2. Not to show completion menu automatically</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Stop_completion" rel="toc">7.3. Stop completion</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Finish_completion_by_TAB" rel="toc">7.4. Finish completion by TAB</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Select_candidates_with_C-n_C-p_only_when_completion_menu_is_displayed" rel="toc">7.5. Select candidates with C-n/C-p only when completion menu is displayed</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Not_to_use_quick_help" rel="toc">7.6. Not to use quick help</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Change_a_height_of_completion_menu" rel="toc">7.7. Change a height of completion menu</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Enable_auto-complete-mode_automatically_for_specific_modes" rel="toc">7.8. Enable <code>auto-complete-mode</code> automatically for specific modes</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Ignore_case" rel="toc">7.9. Ignore case</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Stop_completion_automatically_after_inserting_specific_words" rel="toc">7.10. Stop completion automatically after inserting specific words</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Change_colors" rel="toc">7.11. Change colors</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Change_default_sources" rel="toc">7.12. Change default sources</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Change_sources_for_specific_major_modes" rel="toc">7.13. Change sources for specific major modes</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Completion_with_specific_source" rel="toc">7.14. Completion with specific source</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Show_help_persistently" rel="toc">7.15. Show help persistently</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Show_a_lastly_completed_candidate_help" rel="toc">7.16. Show a lastly completed candidate help</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Show_help_beautifully" rel="toc">7.17. Show help beautifully</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Configuration" rel="toc">8. Configuration</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-delay" rel="toc">8.1. <code>ac-delay</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-auto-show-menu" rel="toc">8.2. <code>ac-auto-show-menu</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-show-menu-immediately-on-auto-complete" rel="toc">8.3. <code>ac-show-menu-immediately-on-auto-complete</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-expand-on-auto-complete" rel="toc">8.4. <code>ac-expand-on-auto-complete</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-disable-faces" rel="toc">8.5. <code>ac-disable-faces</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-stop-flymake-on-completing" rel="toc">8.6. <code>ac-stop-flymake-on-completing</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-fuzzy" rel="toc">8.7. <code>ac-use-fuzzy</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-fuzzy-cursor-color" rel="toc">8.8. <code>ac-fuzzy-cursor-color</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-comphist" rel="toc">8.9. <code>ac-use-comphist</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-comphist-threshold" rel="toc">8.10. <code>ac-comphist-threshold</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-comphist-file" rel="toc">8.11. <code>ac-comphist-file</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-quick-help" rel="toc">8.12. <code>ac-use-quick-help</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-quick-help-delay" rel="toc">8.13. <code>ac-quick-help-delay</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-menu-height" rel="toc">8.14. <code>ac-menu-height</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-quick-help-height" rel="toc">8.15. <code>ac-quick-help-height</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-candidate-limit" rel="toc">8.16. <code>ac-candidate-limit</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-modes" rel="toc">8.17. <code>ac-modes</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-compatible-packages-regexp" rel="toc">8.18. <code>ac-compatible-packages-regexp</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-trigger-commands" rel="toc">8.19. <code>ac-trigger-commands</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-trigger-commands-on-completing" rel="toc">8.20. <code>ac-trigger-commands-on-completing</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-trigger-key" rel="toc">8.21. <code>ac-trigger-key</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-auto-start" rel="toc">8.22. <code>ac-auto-start</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-ignores" rel="toc">8.23. <code>ac-ignores</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-ignore-case" rel="toc">8.24. <code>ac-ignore-case</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-dwim" rel="toc">8.25. <code>ac-dwim</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-menu-map" rel="toc">8.26. <code>ac-use-menu-map</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-overriding-local-map" rel="toc">8.27. <code>ac-use-overriding-local-map</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-completion-face" rel="toc">8.28. <code>ac-completion-face</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-candidate-face" rel="toc">8.29. <code>ac-candidate-face</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-selection-face" rel="toc">8.30. <code>ac-selection-face</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#global-auto-complete-mode" rel="toc">8.31. <code>global-auto-complete-mode</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-user-dictionary" rel="toc">8.32. <code>ac-user-dictionary</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-user-dictionary-files" rel="toc">8.33. <code>ac-user-dictionary-files</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-dictionary-directories" rel="toc">8.34. <code>ac-dictionary-directories</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-sources" rel="toc">8.35. <code>ac-sources</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-completing-map" rel="toc">8.36. <code>ac-completing-map</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-menu-map" rel="toc">8.37. <code>ac-menu-map</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-mode-map" rel="toc">8.38. <code>ac-mode-map</code></a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Extend" rel="toc">9. Extend</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Prototype" rel="toc">9.1. Prototype</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Example" rel="toc">9.2. Example</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Initialization" rel="toc">9.3. Initialization</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Cache" rel="toc">9.4. Cache</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Cache_Expiration" rel="toc">9.4.1. Cache Expiration</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Action" rel="toc">9.5. Action</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Omni_Completion" rel="toc">9.6. Omni Completion</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-define-source" rel="toc">9.7. <code>ac-define-source</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Source_Properties" rel="toc">9.8. Source Properties</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#init" rel="toc">9.8.1. <code>init</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#candidates" rel="toc">9.8.2. <code>candidates</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#prefix" rel="toc">9.8.3. <code>prefix</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#requires" rel="toc">9.8.4. <code>requires</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#action" rel="toc">9.8.5. <code>action</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#limit" rel="toc">9.8.6. <code>limit</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#symbol" rel="toc">9.8.7. <code>symbol</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#summary" rel="toc">9.8.8. <code>summary</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#cache" rel="toc">9.8.9. <code>cache</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#require" rel="toc">9.8.10. <code>require</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#candidate-face" rel="toc">9.8.11. <code>candidate-face</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#selection-face" rel="toc">9.8.12. <code>selection-face</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#depends" rel="toc">9.8.13. <code>depends</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#available" rel="toc">9.8.14. <code>available</code></a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Variables" rel="toc">9.9. Variables</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-buffer" rel="toc">9.9.1. <code>ac-buffer</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-point" rel="toc">9.9.2. <code>ac-point</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-prefix" rel="toc">9.9.3. <code>ac-prefix</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-limit" rel="toc">9.9.4. <code>ac-limit</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#ac-candidates" rel="toc">9.9.5. <code>ac-candidates</code></a></li>
+</ul></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Trouble_Shooting" rel="toc">10. Trouble Shooting</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Response_Latency" rel="toc">10.1. Response Latency</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#trouble_ac-auto-start" rel="toc">10.1.1. <code>ac-auto-start</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#trouble_ac-delay" rel="toc">10.1.2. <code>ac-delay</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#trouble_ac-auto-show-menu" rel="toc">10.1.3. <code>ac-auto-show-menu</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#trouble_ac-use-comphist" rel="toc">10.1.4. <code>ac-use-comphist</code></a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#trouble_ac-candidate-limit" rel="toc">10.1.5. <code>ac-candidate-limit</code></a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Completion_menu_is_disrupted" rel="toc">10.2. Completion menu is disrupted</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Column_Computation_Case" rel="toc">10.2.1. Column Computation Case</a></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Font_Case" rel="toc">10.2.2. Font Case</a></li>
+</ul></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Known_Bugs" rel="toc">11. Known Bugs</a>
+<ul>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Auto_completion_will_not_be_started_in_a_buffer_flyspell-mode_enabled" rel="toc">11.1. Auto completion will not be started in a buffer <code>flyspell-mode</code> enabled</a></li>
+</ul></li>
+<li><a href="http://cx4a.org/software/auto-complete/manual.html#Reporting_Bugs" rel="toc">12. Reporting Bugs</a></li>
+</ul>
+
+<hr>
+
+<h2 id="Introduction">1. Introduction</h2>
+
+<p>Auto Complete Mode (aka <code>auto-complete.el</code>, <code>auto-complete-mode</code>) is a extension that automates and advances completion-system of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a>. This is superior than old system:</p>
+
+<ul>
+<li>Visual interface</li>
+<li>Reduce overhead of completion by using statistic method</li>
+<li>Extensibility</li>
+</ul>
+
+<p>This user manual covers from how to install and how to use to how to extend. Please contact me if you have question.</p>
+
+<p>Auto Complete Mode is licensed under the term of <a href="http://gplv3.fsf.org/">GPLv3</a>. And this document is licensed under the term of <a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>.</p>
+
+<h2 id="Downloads">2. Downloads</h2>
+
+<p>You can download from <a href="http://cx4a.org/software/auto-complete/index.html">Auto Complete Mode top page</a>.</p>
+
+<h2 id="Installation">3. Installation</h2>
+
+<h3 id="Requirements">3.1. Requirements</h3>
+
+<ul>
+<li>800MHz or higher CPU</li>
+<li>256MB or higher RAM</li>
+<li>GNU Emacs 22 or later</li>
+</ul>
+
+<h3 id="Installation_Script">3.2. Installation Script</h3>
+
+<p>It is easy to install by using a installation script called <code>etc/install.el</code> that is located in the package directory.</p>
+
+<p>Type <code>M-x load-file RET</code> in the running Emacs or newly launched Emacs. Note that if you want to upgrade <code>auto-complete-mode</code>, you have to install in <strong>a newly launched Emacs with <code>-q</code> option</strong>. Then input a file name to load which is a path string with adding <code>/etc/install.el</code> to the package directory. For example, if the package directory is <code>~/tmp/auto-complete-1.2</code>, the file name will be <code>~/tmp/auto-complete-1.2/etc/install.el</code>.</p>
+
+<p>Then input a directory where Auto Complete will be installed. You need to add a directory to <code>load-path</code> later if <code>load-path</code> doesn't include the directory. The directory is to be <code>~/.emacs.d</code> by default.</p>
+
+<p>Finally type <code>RET</code> to start installation. After installation, you may see the following buffer and follow instructions to edit <code>.emacs</code>.</p>
+
+<p>You can also install from terminal like:</p>
+
+<pre><code>$ make install
+$ # or with directory specified
+$ make install DIR=$HOME/.emacs.d/
+</code></pre>
+
+<p>If you don't have GNU Make, run emacs like:</p>
+
+<pre><code>$ emacs -batch -l etc/install.el
+</code></pre>
+
+<p><strong>Example message after installation (*Installation Result* Buffer)</strong></p>
+
+<pre><code>Successfully installed!
+
+Add the following code to your .emacs:
+
+(add-to-list 'load-path "~/.emacs.d")    ; This may not be appeared if you have already added.
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(require 'auto-complete-config)
+(ac-config-default)
+</code></pre>
+
+<h3 id="Manual_Installation">3.3. Manual Installation</h3>
+
+<p>It is also possible to install manually if you follow a directory configuration. First, do byte-compile all <code>.el</code> files in the package directory. You may use <code>Makefile</code> in UNIX OS.</p>
+
+<pre><code>$ make byte-compile
+</code></pre>
+
+<p>If you can't use <code>Makefile</code>, open the directory from Emacs by <code>C-x d</code> and type <code>* . el RET B RET</code> to do byte-compile.</p>
+
+<p>Then copy all <code>.el</code> files and <code>.elc</code> files to a directory which is added to <code>load-path</code>. You may do such the following command if the directory is <code>~/.emacs.d</code></p>
+
+<pre><code>$ cp *.el *.elc ~/.emacs.d
+</code></pre>
+
+<p>And then install dictionary files. They are optional to run Auto Complete Mode, but you should install if you don't have any reason. Dictionary files are located in called <code>dict</code> directory, it is needed that they are installed to a directory which is <code>auto-complete.el</code> has been installed. If you installed <code>auto-complete.el</code> to a directory called <code>~/.emacs.d</code>, you also have to install dictionary files to <code>~/.emacs.d</code>. Please be careful not to overwrite existed files. It may be rare case, but the installation script above avoids overwrite by renaming <code>dict</code> directory to <code>ac-dict</code> directory.</p>
+
+<pre><code>$ cp -r dict ~/.emacs.d
+</code></pre>
+
+<p>Finally add the following code to <code>.emacs</code>.</p>
+
+<pre><code>(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+(require 'auto-complete-config)
+(ac-config-default)
+</code></pre>
+
+<p>If you haven't added the directory to <code>load-path</code>, you need to add the following code too.</p>
+
+<pre><code>(add-to-list 'load-path "~/.emacs.d")
+</code></pre>
+
+<h3 id="Check">3.4. Check</h3>
+
+<p>Type some characters in *scratch* buffer in a restarted Emacs or newly launched Emacs. It is successful if you see completion menu. If you have error or no completion is started, it is failure maybe. Please contact me in such case with confirmation following:</p>
+
+<ul>
+<li><p>Using correct <code>load-path</code>?</p>
+
+<p>A directory which <code>auto-complete.el</code> is installed to is in <code>load-path</code>.</p></li>
+<li><p>Characters <code>AC</code> in mode-line?</p>
+
+<p>If you don't see characters <code>AC</code> in mode-line (a gray line of bottom of buffer), <code>auto-complete-mode</code> is not enabled. Type <code>M-x auto-complete-mode</code> to enable and try again.</p></li>
+<li><p>Error occurred</p>
+
+<p>If you have *Backtrace* with errors or errors in minibuffer (bottom of frame), please contact me with the errors.</p></li>
+</ul>
+
+<h2 id="Basic_Usage">4. Basic Usage</h2>
+
+<p>First, in a meaning, <code>auto-complete-mode</code> has no "usage". Because <code>auto-complete-mode</code> is designed to fade into Emacs editing system. Users will be received a highly-developed completion-system automatically without any difficulty. Ultimately, a goal of <code>auto-complete-mode</code> is to provide a system that does what users want without any command, but it is impossible to accomplish 100% accuracy actually. So there is "usage" to cover that points.</p>
+
+<h3 id="Input_Characters">4.1. Input Characters</h3>
+
+<p>Inputting characters is basic. Any completion will never be shown without any character. So when completion will be started, in other others, what character causes completion to be started? It is good question but it is difficult to answer here. In simple words, completion will be started when just character is inserted. See <a href="http://cx4a.org/software/auto-complete/manual.html#ac-trigger-commands"><code>ac-trigger-commands</code></a> for more details.</p>
+
+<p><img src="./Auto Complete Mode - User Manual_files/ac.png" alt="Inputting Characters"></p>
+
+<h3 id="Completion_by_TAB">4.2. Completion by TAB</h3>
+
+<p>After completion is started, completion by TAB will be enabled temporarily. Completion by TAB is the most important and most frequent used command. TAB has several meanings.</p>
+
+<ul>
+<li><p>Case that only one candidate remains</p>
+
+<p>If only on candidate remains, the candidate will be used to complete.</p></li>
+<li><p>Case that there is common part among candidates</p>
+
+<p>For example, if all candidates start with "set", it means they have common part "set". So TAB completes "set" at first.</p></li>
+<li><p>Otherwise</p>
+
+<p>Otherwise, select candidates in cycle by typing TAB.</p></li>
+</ul>
+
+<p>It may be different a little according to settings, but basically completion by TAB works as we wrote above. A reason why TAB has several meanings is that we want users to do anything with TAB.</p>
+
+<h3 id="Completion_by_RET">4.3. Completion by RET</h3>
+
+<p>Like completion by TAB but some points are different:</p>
+
+<ul>
+<li>Complete a selected candidate immediately</li>
+<li>Execute an action if a selected candidate has the action</li>
+</ul>
+
+<p>It is necessary to type TAB a few times for completion by TAB. Completion by RET instead complete a selected candidate immediately, so when you see a candidate you want, just type RET. If the candidate has an action, the action will be executed. Take a example of builtin abbrev completion. In completion by TAB, an abbrev which expands "www" to "World Wide Web" will be completed to "www", but in completion by RET, the abbrev will be expanded to "World Wide Web" as completion.</p>
+
+<h3 id="Candidate_Selection">4.4. Candidate Selection</h3>
+
+<p>Following <code>auto-complete-mode</code> philosophy, it is not recommended to select candidates. Because, it means it has been failed to guess completion, and also it requires for users to do candidate selection which is a high cost operation. We think there is so many cases that requires to do candidate selection, because completion by TAB will help candidate selection somehow and in recent version, a statistic method contributes to make a candidate suggestion more accurate. However, actually, this is such cases. So we also think it is not bad idea to remember how to select candidates.</p>
+
+<p>Selecting candidates is not a complex operation. You can select candidates forward or backward by cursor key or <code>M-p</code> and <code>M-n</code>. According to setting, a behavior of completion by TAB will be changed as a behavior of completion by RET. See <a href="http://cx4a.org/software/auto-complete/manual.html#ac-dwim"><code>ac-dwim</code></a> for more details.</p>
+
+<p>There is other ways to select candidates. <code>M-1</code> to select candidate 1, <code>M-2</code> to select candidate 2, and so on.</p>
+
+<h3 id="Help">4.5. Help</h3>
+
+<p><code>auto-complete-mode</code> has two type of help functionalities called <em>Quick Help</em> and <em>Buffer Help</em>. They are different in a point of displaying. Quick help will appear at the side of completion menu, so you can easily see that, but there is a problem if there is no space to displaying the help. Quick help will be shown automatically. To use quick help, you need to set <a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-quick-help"><code>ac-use-quick-help</code></a> to <code>t</code>. Delay time show quick help is given by <a href="http://cx4a.org/software/auto-complete/manual.html#ac-quick-help-delay"><code>ac-quick-help-delay</code></a>.</p>
+
+<p>On other side, buffer help will not be shown without any instructions from users. Buffer help literally display a help in a buffer of other window. It costs much to see than quick help, but it has more readability. To show buffer help, press <code>C-?</code> or <code>f1</code>. By pressing <code>C-M-v</code> or <code>C-M-S-v</code> after showing buffer help, you can scroll forward or backward for help buffer. Other commands will be fallbacked and buffer help will be closed.</p>
+
+<h3 id="Summary">4.6. Summary</h3>
+
+<p>Completion will be started by inserting characters. After completion is started, operations in the following table will be enabled temporarily. After completion is finished, these operations will be disable.</p>
+
+<p></p><table>
+	<thead><tr>
+		<th>Key</th>
+		<th>Command</th>
+		<th>Description</th>
+	</tr></thead>
+	<tbody>
+		<tr>
+			<td>TAB, C-i</td>
+			<td>ac-expand</td>
+			<td>Completion by TAB</td>
+		</tr>
+		<tr>
+			<td>RET, C-m</td>
+			<td>ac-complete</td>
+			<td>Completion by RET</td>
+		</tr>
+		<tr>
+			<td>down, M-n</td>
+			<td>ac-next</td>
+			<td>Select next candidate</td>
+		</tr>
+		<tr>
+			<td>up, M-p</td>
+			<td>ac-previous</td>
+			<td>Select previous candidate</td>
+		</tr>
+		<tr>
+			<td>C-?, f1</td>
+			<td>ac-help</td>
+			<td>Show buffer help</td>
+		</tr>
+	</tbody>
+</table><p></p>
+
+<p>To stop completion, use <code>C-g</code> simply.</p>
+
+<h2 id="Advanced_Usage">5. Advanced Usage</h2>
+
+<h3 id="auto-complete_command">5.1. <code>auto-complete</code> command</h3>
+
+<p>Basically there is assumption that <code>auto-complete-mode</code> will be started automatically, but there is also exception. For example, that is a case that an user wants to complete without inserting any character or a case not to start <code>auto-complete-mode</code> automatically by settings. A command called <code>auto-complete</code> is useful in such cases, which is used with key binding in general. The following code changes a default completion command to more advanced feature that <code>auto-complete-mode</code> provides.</p>
+
+<pre><code>(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+</code></pre>
+
+<p>So, as of <code>auto-complete</code> command, it is a little different from an original automatic completion.</p>
+
+<ul>
+<li><p>Case that only one candidate remains</p>
+
+<p>Complete immediately without showing completion menu.</p></li>
+<li><p>Case that no candidates remains</p>
+
+<p>Attempt to complete with fuzzy matching. See <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Fuzzy_Matching">Completion by Fuzzy Matching</a> for more details.</p></li>
+<li><p>Otherwise</p>
+
+<p>Otherwise start completion with/without expanding a whole common part and showing completion menu. See also <a href="http://cx4a.org/software/auto-complete/manual.html#ac-show-menu-immediately-on-auto-complete"><code>ac-show-menu-immediately-on-auto-complete</code></a> and <a href="http://cx4a.org/software/auto-complete/manual.html#ac-expand-on-auto-complete"><code>ac-expand-on-auto-complete</code></a>.</p></li>
+</ul>
+
+<h3 id="Completion_by_Fuzzy_Matching">5.2. Completion by Fuzzy Matching</h3>
+
+<p>In a case that there is no candidates by <code>auto-complete</code> command or a case that <code>ac-fuzzy-complete</code> command is executed, <code>auto-complete-mode</code> attempts to complete with fuzzy matching instead of usual exact matching. Parameters of fuzzy matching has already been optimized for use, so users don't need to change them. However if you want to know the internals, see <code>fuzzy.el</code>. Using completion by fuzzy matching, typo will be fixed as a series of completion. For instance, input "messaeg" in a buffer, and then do <code>M-x auto-complete</code> or <code>M-x ac-fuzzy-complete</code>. The cursor color will be changed to red if completion has been successful, and then you can continue to complete with regarding of "messaeg" as "message". It is not bad idea to bind <code>auto-complete</code> command to some key in a meaning of handling such cases.</p>
+
+<p><img src="./Auto Complete Mode - User Manual_files/ac-fuzzy.png" alt="Fuzzy matching"></p>
+
+<h3 id="Filtering_Completion_Candidates">5.3. Filtering Completion Candidates</h3>
+
+<p>You can start filtering by <code>C-s</code>. The cursor color will be changed to blue. Then input characters to filter. It is possible to do completion by TAB or select candidates, which changes the cursor color to original so that telling filtering completion candidates has done. The filtering string will be restored when <code>C-s</code> again. To delete the filter string, press <code>DEL</code> or <code>C-h</code>. Other general operations is not allowed there.</p>
+
+<p><img src="./Auto Complete Mode - User Manual_files/ac-isearch.png" alt="Filtering"></p>
+
+<h3 id="Trigger_Key">5.4. Trigger Key</h3>
+
+<p>It is difficult what key <code>auto-complete</code> command is bound to. It should be bound to a key which is easy to press as much as possible because completion operation is often happened. However, it is a major problem that there is no empty key to press easily. <code>auto-complete-mode</code> provides a feature called <em>Trigger Key</em> that handles such the problem. Using trigger key, you can use an arbitrary key temporarily if necessary. The following code uses <code>TAB</code> as trigger key.</p>
+
+<pre><code>(ac-set-trigger-key "TAB")
+</code></pre>
+
+<p>Trigger key will be enabled after inserting characters. Otherwise it is dealt as an usual command (TAB will be indent). Generally, trigger key is used with <code>auto-auto-start</code> being <code>nil</code>.</p>
+
+<pre><code>(setq ac-auto-start nil)
+</code></pre>
+
+<p>As of <code>ac-auto-start</code>, see <a href="http://cx4a.org/software/auto-complete/manual.html#Not_to_complete_automatically">Not to complete automatically</a> or <a href="http://cx4a.org/software/auto-complete/manual.html#ac-auto-start"><code>ac-auto-start</code></a> for more details.</p>
+
+<h3 id="Candidate_Suggestion">5.5. Candidate Suggestion</h3>
+
+<p><code>auto-complete-mode</code> analyzes completion operations one by one and reduces overheads of completion as much as possible. For example, having a candidate "foobar" been completed few times, <code>auto-complete-mode</code> arranges it to top of the candidates next time and make a situation that allows users to complete the word with one time TAB or few times TAB. It is called <code>comphist</code> internally, and you can use it by setting <code>ac-use-comphist</code> to <code>t</code>. It is enabled by default. Collection operations data will be stored in <code>user-emacs-directory</code> or <code>~/.emacs.d/</code> with a name <code>ac-comphist.dat</code>.</p>
+
+<p><code>auto-complete-mode</code> collects two types of data to accomplish accurate candidate suggestion.</p>
+
+<ul>
+<li>Count of completion</li>
+<li>Position of completion</li>
+</ul>
+
+<p>Simply saying, it collects not only a completion count but also a position of completion. A completion candidate will be scored with the count and the point. If you complete <code>find-file</code> with a word f few times, in next time <code>find-file</code> will be arranged to top of candidates. However it is too simple. Actually <code>find-file</code> with <code>find-</code> will not have the same score, because a distance between <code>f</code> and <code>find-</code> will reduce a weight of scoring. It means that if you often complete <code>find-library</code> after <code>find-</code>, <code>find-library</code> will get high score than <code>find-file</code> at that position. So <code>auto-complete-mode</code> can guess <code>find-file</code> will be top after <code>f</code> and <code>find-library</code> will be top after <code>find-</code> as it seems to learn from users' operations.</p>
+
+<h3 id="Completion_by_Dictionary">5.6. Completion by Dictionary</h3>
+
+<p>Dictionary is a simple list of string. There is three types of dictionary: user defined dictionary, major mode dictionary, and extension dictionary. You need to add <code>ac-source-dictionary</code> to <code>ac-sources</code> (default). See <a href="http://cx4a.org/software/auto-complete/manual.html#Source">source</a> for more details.</p>
+
+<h4 id="User_Defined_Dictionary">5.6.1. User Defined Dictionary</h4>
+
+<p>User defined dictionary is composed of a list of string specified <code>ac-user-dictionary</code> and dictionary files specified by <code>ac-user-dictionary-files</code>. Dictionary file is a word list separated with newline. User defined dictionary is shared with all buffers. Here is example adding your mail address to dictionary.</p>
+
+<pre><code>(add-to-list 'ac-user-dictionary "foobar@example.com")
+</code></pre>
+
+<p>Setting will be applied immediately. Try to input "foo" in a buffer. You may see <code>foobar@example.com</code> as a completion candidate. This setting will be cleared if Emacs will quit. You need to write the following code to keep setting in next Emacs launching.</p>
+
+<pre><code>(setq ac-user-dictionary '("foobar@example.com" "hogehoge@example.com"))
+</code></pre>
+
+<p>There is more easy way to add word to dictionary. Files specified by <code>ac-user-dictionary-files</code> will be treated as dictionary files. By default, <code>~/.dict</code> will be a dictionary file, so edit <code>~/.dict</code> like:</p>
+
+<pre><code>foobar@example.com
+hogehoge@example.com
+</code></pre>
+
+<p>As we said, words are separated with newline. They are not applied immediately, because <code>auto-complete-mode</code> uses cache not to load every time from a dictionary file. It may be high cost. To clear cache, do <code>M-x ac-clear-dictionary-cache</code>. After that, dictionary files will be load absolutely.</p>
+
+<p>No need to say perhaps, you can use other files as dictionary file by adding to <code>ac-user-dictionary-files</code>.</p>
+
+<h4 id="Major_Mode_Dictionary_and_Extension_Dictionary">5.6.2. Major Mode Dictionary and Extension Dictionary</h4>
+
+<p>You can use other dictionaries for every major-modes and extensions. A dictionary will loaded from a directory specified with <code>ac-dictionary-directories</code>. <code>ac-dictionary-directories</code> may be the following setting if you followed <a href="http://cx4a.org/software/auto-complete/manual.html#Installation">installation</a> instructions.</p>
+
+<pre><code>(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+</code></pre>
+
+<p>A dictionary named <code>c++-mode</code> for specific major-mode and a dictionary named <code>txt</code> for specific extension will be stored in the directory. For instance, you complete in a buffer named <code>a.cpp</code> with dictionary completion, following the setting above, <code>~/.emacs.d/ac-dict/c++-mode</code> and <code>~/.emacs.d/ac-dict/cpp</code> will be loaded as dictionary file. You can edit the dictionary files and make a new one. In addition, you can add a new dictionary file to a directory that has same configuration.</p>
+
+<p>As same as user defined dictionary, after editing and adding dictionary, you should do <code>M-x ac-clear-dictionary-cache</code> to apply changes.</p>
+
+<h2 id="Source">6. Source</h2>
+
+<p><em>Source</em> is a concept that insures a extensibility of <code>auto-complete-mode</code>. Simply saying, source is a description about:</p>
+
+<ul>
+<li>How to generate completion candidates</li>
+<li>How to complete</li>
+<li>How to show</li>
+</ul>
+
+<p>Anybody who know about Emacs Lisp a little can define a source easily. See <a href="http://cx4a.org/software/auto-complete/manual.html#Extend">extend</a> for how to define a source. Here we can explain how to use builtin sources.</p>
+
+<p>Usually a name of source starts with <code>ac-source-</code>. So you can list up sources with <code>apropos</code> (<code>M-x apropos RET ^ac-source-</code>). You may see <code>ac-source-filename</code> and <code>ac-source-dictionary</code> which are entities of sources.</p>
+
+<h3 id="Using_Source">6.1. Using Source</h3>
+
+<p>If you wrote <code>(ac-config-default)</code> in your <code>.emacs</code>, it is rare to change a source setting because it is already optimized to use. Here is a short explanation about source however. Sources will be used by setting <code>ac-sources</code> to a list of sources. You can see the setting by evaluating <code>ac-sources</code> in *scratch* buffer:</p>
+
+<pre><code>;; Formatted
+(ac-source-filename
+ ac-source-functions
+ ac-source-yasnippet
+ ac-source-variables
+ ac-source-symbols
+ ac-source-features
+ ac-source-abbrev
+ ac-source-words-in-same-mode-buffers
+ ac-source-dictionary)
+</code></pre>
+
+<p>As you see, <code>ac-sources</code> in *scratch* buffer has six sources. We explain each source for detail, you can guess meanings of sources. It is worth to remember that <code>ac-sources</code> is a buffer local variable, which means each <code>ac-sources</code> for buffers will be different.</p>
+
+<p>Here is an example. Think you are at *scratch* buffer. As we said, this buffer has many sources. Some people think it is too many. So try to change <code>ac-sources</code> to reduce functionalities. It is easy to change. Just evaluate the following code in *scratch* buffer or with <code>M-:</code>:</p>
+
+<pre><code>(setq ac-sources '(ac-source-symbols ac-source-words-in-same-mode-buffers))
+</code></pre>
+
+<p>This example changes <code>ac-source</code> setting and enable only symbol completion and word completion among same major modes. Then, how can we enable this setting in next Emacs launching? We can change settings by adding a hook which is called when *scratch* buffer is created.</p>
+
+<pre><code>(defun my-ac-emacs-lisp-mode ()
+  (setq ac-sources '(ac-source-symbols ac-source-words-in-same-mode-buffers)))
+
+(add-hook 'emacs-lisp-mode-hook 'my-ac-emacs-lisp-mode)
+</code></pre>
+
+<p>If a code <code>(ac-config-default)</code> is written in <code>.emacs</code>, the code above may not be worked correctly. It is because of <code>(ac-config-default)</code> will overwrite the setting. In such case, you can redefine a function which is used in <code>(ac-config-default)</code>. The function name is <code>ac-emacs-lisp-mode-setup</code> in <code>emacs-lisp-mode</code>. See <code>auto-complete-config.el</code> for more details.</p>
+
+<pre><code>(defun ac-emacs-lisp-mode-setup ()
+  (setq ac-sources '(ac-source-symbols ac-source-words-in-same-mode-buffers)))
+</code></pre>
+
+<p>So, now you know how to change sources in a specific major mode. Summary is:</p>
+
+<ol>
+<li>Define a function changing <code>ac-sources</code></li>
+<li>Register the function to proper mode hooks (<code>c++-mode-hook</code>, <code>ruby-mode-hook</code>, and <code>python-mode-hook</code>, etc)</li>
+</ol>
+
+<p>By the way, how can we change a setting for all buffers? We use <code>setq-default</code> to change <code>ac-sources</code> instead of <code>setq</code> in such case. Then the default value of <code>ac-sources</code> will be changed to the value you specified.</p>
+
+<pre><code>(setq-default ac-sources '(ac-source-words-in-all-buffer))
+</code></pre>
+
+<p>There is other ways to do that. <code>(ac-config-default)</code> changes the default value of <code>ac-sources</code> by registering a hook for <code>auto-complete-mode</code>. The registered function is <code>ac-common-setup</code> that adds <code>ac-source-filename</code> to the first of <code>ac-sources</code> by default. So all <code>auto-complete-mode</code> enabled buffer will have <code>ac-source-filename</code> at the first of <code>ac-sources</code>. A reason why adding to the first is relating to <a href="http://cx4a.org/software/auto-complete/manual.html#Omni_Completion">omni completion</a>. Anyway you don't care about it here. So if you want to change <code>ac-sources</code> of all buffer, you can redefine <code>ac-common-setup</code> function to do that.</p>
+
+<pre><code>;; Add ac-source-dictionary to ac-sources of all buffer
+(defun ac-common-setup ()
+  (setq ac-sources (append ac-sources '(ac-source-dictionary))))
+</code></pre>
+
+<h3 id="Builtin_Sources">6.2. Builtin Sources</h3>
+
+<p>Here are defined sources in <code>auto-complete.el</code> and <code>auto-complete-config.el</code>.</p>
+
+<h4 id="ac-source-abbrev">6.2.1. <code>ac-source-abbrev</code></h4>
+
+<p>A source for Emacs abbreviation function. See <code>info emacs Abbrevs</code> about abbreviation function.</p>
+
+<h4 id="ac-source-css-property">6.2.2. <code>ac-source-css-property</code></h4>
+
+<p>A source for CSS property.</p>
+
+<h4 id="ac-source-dictionary">6.2.3. <code>ac-source-dictionary</code></h4>
+
+<p>A source for dictionary. See <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Dictionary">completion by dictionary</a> about dictionary.</p>
+
+<h4 id="ac-source-eclim">6.2.4. <code>ac-source-eclim</code></h4>
+
+<p>A source for <a href="http://github.com/senny/emacs-eclim">Emacs-eclim</a>.</p>
+
+<h4 id="ac-source-features">6.2.5. <code>ac-source-features</code></h4>
+
+<p>A source for completing features which are available with <code>(require '</code>.</p>
+
+<h4 id="ac-source-filename">6.2.6. <code>ac-source-filename</code></h4>
+
+<p>A source for completing file name. Completion will be started after inserting <code>/</code>.</p>
+
+<h4 id="ac-source-files-in-current-dir">6.2.7. <code>ac-source-files-in-current-dir</code></h4>
+
+<p>A source for completing files in a current directory. It may be useful with <code>eshell</code>.</p>
+
+<h4 id="ac-source-functions">6.2.8. <code>ac-source-functions</code></h4>
+
+<p>A source for completing Emacs Lisp functions. It is available only after <code>(</code>.</p>
+
+<h4 id="ac-source-gtags">6.2.9. <code>ac-source-gtags</code></h4>
+
+<p>A source for completing tags of <a href="http://www.tamacom.com/global.html">Global</a>.</p>
+
+<h4 id="ac-source-imenu">6.2.10. <code>ac-source-imenu</code></h4>
+
+<p>A source for completing <code>imenu</code> nodes. See <code>info emacs imenu</code> for details.</p>
+
+<h4 id="ac-source-semantic">6.2.11. <code>ac-source-semantic</code></h4>
+
+<p>A source for <a href="http://cedet.sourceforge.net/semantic.shtml">Semantic</a>. It can be used for completing member name for C/C++.</p>
+
+<h4 id="ac-source-semantic-raw">6.2.12. <code>ac-source-semantic-raw</code></h4>
+
+<p>Unlike <code>ac-source-semantic</code>, this source is for completing symbols in a raw namespace.</p>
+
+<h4 id="ac-source-symbols">6.2.13. <code>ac-source-symbols</code></h4>
+
+<p>A source for completing Emacs Lisp symbols.</p>
+
+<h4 id="ac-source-variables">6.2.14. <code>ac-source-variables</code></h4>
+
+<p>A source for completing Emacs Lisp symbols.</p>
+
+<h4 id="ac-source-words-in-all-buffer">6.2.15. <code>ac-source-words-in-all-buffer</code></h4>
+
+<p>A source for completing words in all buffer. Unlikely <a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-words-in-same-mode-buffers"><code>ac-source-words-in-same-mode-buffers</code></a>, it doesn't regard major-mode.</p>
+
+<h4 id="ac-source-words-in-buffer">6.2.16. <code>ac-source-words-in-buffer</code></h4>
+
+<p>A source for completing words in a current buffer.</p>
+
+<h4 id="ac-source-words-in-same-mode-buffers">6.2.17. <code>ac-source-words-in-same-mode-buffers</code></h4>
+
+<p>A source for completing words which are collected over buffers whom major-mode is same to of a current buffer. For example, words will shared among <code>a.cpp</code> and <code>b.cpp</code>, but not shared among <code>a.pl</code> and <code>b.cpp</code> because they are different major-mode buffers. Usually this source is more useful than <a href="http://cx4a.org/software/auto-complete/manual.html#ac-source-words-in-all-buffer"><code>ac-source-words-in-all-buffer</code></a>.</p>
+
+<h4 id="ac-source-yasnippet">6.2.18. <code>ac-source-yasnippet</code></h4>
+
+<p>A source for <a href="http://code.google.com/p/yasnippet/">Yasnippet</a> to complete and expand snippets.</p>
+
+<h2 id="Tips">7. Tips</h2>
+
+<h3 id="Not_to_complete_automatically">7.1. Not to complete automatically</h3>
+
+<p>If you are being annoyed with displaying completion menu, you can disable automatic starting completion by setting <code>ac-auto-start</code> to <code>nil</code>.</p>
+
+<pre><code>(setq ac-auto-start nil)
+</code></pre>
+
+<p>You need to bind some key to <code>auto-complete</code> command (because you need to complete anyway). For example, bind to <code>ac-mode-map</code>, which is a key map for <code>auto-complete-mode</code> enabled buffer:</p>
+
+<pre><code>(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+</code></pre>
+
+<p>Or bind to global key map.</p>
+
+<pre><code>(global-set-key "\M-/" 'auto-complete)
+</code></pre>
+
+<p>In addition, if you allow to start completion automatically but also want to be silent as much as possible, you can do it by setting <code>ac-auto-start</code> to an prefix length integer. For example, if you want to start completion automatically when you has inserted 4 or more characters, just set <code>ac-auto-start</code> to 4:</p>
+
+<pre><code>(setq ac-auto-start 4)
+</code></pre>
+
+<p>Setting <code>ac-auto-start</code> to large number will result in good for performance. Lesser <code>ac-auto-start</code>, more high cost to produce completion candidates, because there will be so many candidates necessarily. If you feel <code>auto-complete-mode</code> is stalling, change <code>ac-auto-start</code> to a larger number or <code>nil</code>.</p>
+
+<p>See <a href="http://cx4a.org/software/auto-complete/manual.html#ac-auto-start"><code>ac-auto-start</code></a> for more details.</p>
+
+<p>And consider to use <a href="http://cx4a.org/software/auto-complete/manual.html#Trigger_Key">trigger key</a>.</p>
+
+<h3 id="Not_to_show_completion_menu_automatically">7.2. Not to show completion menu automatically</h3>
+
+<p>There is another approach to solve the annoying problem is that not to show completion menu automatically. Not to show completion menu automatically, set <a href="http://cx4a.org/software/auto-complete/manual.html#ac-auto-show-menu"><code>ac-auto-show-menu</code></a> to <code>nil</code>.</p>
+
+<pre><code>(setq ac-auto-show-menu nil)
+</code></pre>
+
+<p>When you select or filter candidates, completion menu will be shown.</p>
+
+<p>In other way, you can delay showing completion menu by setting <code>ac-auto-show-menu</code> to seconds in real number.</p>
+
+<pre><code>;; Show 0.8 second later
+(setq ac-auto-show-menu 0.8)
+</code></pre>
+
+<p>This interface has both good points of completely automatic completion and completely non-automatic completion. This may be default in the future.</p>
+
+<h3 id="Stop_completion">7.3. Stop completion</h3>
+
+<p>You can stop completion by pressing <code>C-g</code>. However you won't press <code>C-g</code> while defining a macro. In such case, it is a good idea to bind some key to <code>ac-completing-map</code>.</p>
+
+<pre><code>(define-key ac-completing-map "\M-/" 'ac-stop)
+</code></pre>
+
+<p>Now you can stop completion by pressing <code>M-/</code>.</p>
+
+<h3 id="Finish_completion_by_TAB">7.4. Finish completion by TAB</h3>
+
+<p>As we described above, there is many behaviors in TAB. You need to use TAB and RET properly, but there is a simple interface that bind RET to original and TAB to finish completion:</p>
+
+<pre><code>(define-key ac-completing-map "\t" 'ac-complete)
+(define-key ac-completing-map "\r" nil)
+</code></pre>
+
+<h3 id="Select_candidates_with_C-n_C-p_only_when_completion_menu_is_displayed">7.5. Select candidates with C-n/C-p only when completion menu is displayed</h3>
+
+<p>By evaluating the following code, you can select candidates with C-n/C-p, but it might be annoying sometimes.</p>
+
+<pre><code>;; Bad config
+(define-key ac-completing-map "\C-n" 'ac-next)
+(define-key ac-completing-map "\C-p" 'ac-previous)
+</code></pre>
+
+<p>In this case, it is better that selecting candidates is enabled only when completion menu is displayed so that the key input will not be taken as much as possible. <code>ac-menu-map</code> is a keymap for completion on completion menu which is enabled when <code>ac-use-menu-map</code> is <code>t</code>.</p>
+
+<pre><code>(setq ac-use-menu-map t)
+;; Default settings
+(define-key ac-menu-map "\C-n" 'ac-next)
+(define-key ac-menu-map "\C-p" 'ac-previous)
+</code></pre>
+
+<p>See <a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-menu-map"><code>ac-use-menu-map</code></a> and <a href="http://cx4a.org/software/auto-complete/manual.html#ac-menu-map"><code>ac-menu-map</code></a> for more details.</p>
+
+<h3 id="Not_to_use_quick_help">7.6. Not to use quick help</h3>
+
+<p>A tooltip help that is shown when completing is called quick help. You can disable it if you don't want to use it:</p>
+
+<pre><code>(setq ac-use-quick-help nil)
+</code></pre>
+
+<h3 id="Change_a_height_of_completion_menu">7.7. Change a height of completion menu</h3>
+
+<p>Set <code>ac-menu-height</code> to number of lines.</p>
+
+<pre><code>;; 20 lines
+(setq ac-menu-height 20)
+</code></pre>
+
+<h3 id="Enable_auto-complete-mode_automatically_for_specific_modes">7.8. Enable <code>auto-complete-mode</code> automatically for specific modes</h3>
+
+<p><code>auto-complete-mode</code> won't be enabled automatically for modes that are not in <code>ac-modes</code>. So you need to set if necessary:</p>
+
+<pre><code>(add-to-list 'ac-modes 'brandnew-mode)
+</code></pre>
+
+<h3 id="Ignore_case">7.9. Ignore case</h3>
+
+<p>There is three ways to distinguish upper case and lower case.</p>
+
+<pre><code>;; Just ignore case
+(setq ac-ignore-case t)
+;; Ignore case if completion target string doesn't include upper characters
+(setq ac-ignore-case 'smart)
+;; Distinguish case
+(setq ac-ignore-case nil)
+</code></pre>
+
+<p>Default is <code>smart</code>.</p>
+
+<h3 id="Stop_completion_automatically_after_inserting_specific_words">7.10. Stop completion automatically after inserting specific words</h3>
+
+<p>Set <code>ac-ignores</code> to words that stops completion automatically. In ruby, some people want to stop completion automatically after inserting "end":</p>
+
+<pre><code>(add-hook 'ruby-mode-hook
+          (lambda ()
+            (make-local-variable 'ac-ignores)
+            (add-to-list 'ac-ignores "end")))
+</code></pre>
+
+<p>Note that <code>ac-ignores</code> is not a buffer local variable, so you need to make it buffer local with <code>make-local-variable</code> if it is buffer specific setting.</p>
+
+<h3 id="Change_colors">7.11. Change colors</h3>
+
+<p>Colors settings are following:</p>
+
+<p></p><table>
+	<thead><tr>
+		<th>Face</th>
+		<th>Description</th>
+	</tr></thead>
+	<tbody>
+		<tr>
+			<td><code>ac-completion-face</code></td>
+			<td>Foreground color of inline completion</td>
+		</tr>
+		<tr>
+			<td><code>ac-candidate-face</code></td>
+			<td>Color of completion menu</td>
+		</tr>
+		<tr>
+			<td><code>ac-selection-face</code></td>
+			<td>Selection color of completion menu</td>
+		</tr>
+	</tbody>
+</table><p></p>
+
+<p>To change face background color, use <code>set-face-background</code>. To change face foreground color, use <code>set-face-foreground</code>. To set underline, use <code>set-face-underline</code>.</p>
+
+<pre><code>;; Examples
+(set-face-background 'ac-candidate-face "lightgray")
+(set-face-underline 'ac-candidate-face "darkgray")
+(set-face-background 'ac-selection-face "steelblue")
+</code></pre>
+
+<h3 id="Change_default_sources">7.12. Change default sources</h3>
+
+<p>Read <a href="http://cx4a.org/software/auto-complete/manual.html#Source">source</a> first if you don't familiar with sources. To change default of sources, use <code>setq-default</code>:</p>
+
+<pre><code>(setq-default ac-sources '(ac-source-words-in-all-buffer))
+</code></pre>
+
+<h3 id="Change_sources_for_specific_major_modes">7.13. Change sources for specific major modes</h3>
+
+<p>For example, you may want to use specific sources for C++ buffers. To do that, register a hook by <code>add-hook</code> and change <code>ac-sources</code> properly:</p>
+
+<pre><code>(add-hook 'c++-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
+</code></pre>
+
+<h3 id="Completion_with_specific_source">7.14. Completion with specific source</h3>
+
+<p>You can start completion with specific source. For example, if you want to complete file name, do <code>M-x ac-complete-filename</code> at point. Or if you want to complete C/C++ member name, do <code>M-x ac-complete-semantic</code> at point. Usually, you may bind them to some key like:</p>
+
+<pre><code>;; Complete member name by C-c . for C++ mode.
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c .") 'ac-complete-semantic)))
+;; Complete file name by C-c /
+(global-set-key (kbd "C-c /") 'ac-complete-filename)
+</code></pre>
+
+<p>Generally, such commands will be automatically available when sources are defined. Assume that a source named <code>ac-source-foobar</code> is being defined for example, a command called <code>ac-complete-foobar</code> will be also defined automatically. See also <a href="http://cx4a.org/software/auto-complete/manual.html#Builtin_Sources">builtin sources</a> for available commands.</p>
+
+<p>If you want to use multiple sources for a command, you need to define a command for it like:</p>
+
+<pre><code>(defun semantic-and-gtags-complete ()
+  (interactive)
+  (auto-complete '(ac-source-semantic ac-source-gtags)))
+</code></pre>
+
+<p><code>auto-complete</code> function can take an alternative of <code>ac-sources</code>.</p>
+
+<h3 id="Show_help_persistently">7.15. Show help persistently</h3>
+
+<p>Use <code>ac-persist-help</code> instead of <code>ac-help</code>, which is bound to <code>M-&lt;f1&gt;</code> and <code>C-M-?</code>.</p>
+
+<h3 id="Show_a_lastly_completed_candidate_help">7.16. Show a lastly completed candidate help</h3>
+
+<p><code>ac-last-help</code> command shows a lastly completed candidate help in a <code>ac-help</code> (buffer help) form. If you give an argument by <code>C-u</code> or just call <code>ac-last-persist-help</code>, its help buffer will not disappear automatically.</p>
+
+<p><code>ac-last-quick-help</code> command show a lastly completed candidate help in a <code>ac-quick-help</code> (quick help) form. It is useful if you want to see a function documentation, for example.</p>
+
+<p>You may bind keys to these command like:</p>
+
+<pre><code>(define-key ac-mode-map (kbd "C-c h") 'ac-last-quick-help)
+(define-key ac-mode-map (kbd "C-c H") 'ac-last-help)
+</code></pre>
+
+<h3 id="Show_help_beautifully">7.17. Show help beautifully</h3>
+
+<p>If <a href="http://www.emacswiki.org/emacs-en/PosTip">pos-tip.el</a> is installed, <code>auto-complete-mode</code> uses its native rendering engine for displaying quick help instead of legacy one.</p>
+
+<h2 id="Configuration">8. Configuration</h2>
+
+<p>Any configuration item will be set in <code>.emacs</code> or with <code>M-x customize-group RET auto-complete RET</code>.</p>
+
+<h3 id="ac-delay">8.1. <code>ac-delay</code></h3>
+
+<p>Delay time to start completion in real number seconds. It is a trade off of responsibility and performance.</p>
+
+<h3 id="ac-auto-show-menu">8.2. <code>ac-auto-show-menu</code></h3>
+
+<p>Show completion menu automatically if <code>t</code> specified. <code>t</code> means always automatically showing completion menu. <code>nil</code> means never showing completion menu. Real number means delay time in seconds.</p>
+
+<h3 id="ac-show-menu-immediately-on-auto-complete">8.3. <code>ac-show-menu-immediately-on-auto-complete</code></h3>
+
+<p>Whether or not to show completion menu immediately on <code>auto-complete</code> command. If inline completion has already been showed, this configuration will be ignored.</p>
+
+<h3 id="ac-expand-on-auto-complete">8.4. <code>ac-expand-on-auto-complete</code></h3>
+
+<p>Whether or not to expand a common part of whole candidates.</p>
+
+<h3 id="ac-disable-faces">8.5. <code>ac-disable-faces</code></h3>
+
+<p>Specify a list of face symbols for disabling auto completion. Auto completion will not be started if a face text property at a point is included in the list.</p>
+
+<h3 id="ac-stop-flymake-on-completing">8.6. <code>ac-stop-flymake-on-completing</code></h3>
+
+<p>Whether or not to stop Flymake on completion.</p>
+
+<h3 id="ac-use-fuzzy">8.7. <code>ac-use-fuzzy</code></h3>
+
+<p>Whether or not to use <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Fuzzy_Matching">fuzzy matching</a>.</p>
+
+<h3 id="ac-fuzzy-cursor-color">8.8. <code>ac-fuzzy-cursor-color</code></h3>
+
+<p>Change cursor color to specified color when <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Fuzzy_Matching">fuzzy matching</a> is started. <code>nil</code> means never changed. Available colors can be seen with <code>M-x list-colors-display</code>.</p>
+
+<h3 id="ac-use-comphist">8.9. <code>ac-use-comphist</code></h3>
+
+<p>Whether or not to use <a href="http://cx4a.org/software/auto-complete/manual.html#Candidate_Suggestion">candidate suggestion</a>. <code>nil</code> means never using it and get performance better maybe.</p>
+
+<h3 id="ac-comphist-threshold">8.10. <code>ac-comphist-threshold</code></h3>
+
+<p>Specify a percentage of limiting lower scored candidates. 100% for whole scores.</p>
+
+<h3 id="ac-comphist-file">8.11. <code>ac-comphist-file</code></h3>
+
+<p>Specify a file stores data of <a href="http://cx4a.org/software/auto-complete/manual.html#Candidate_Suggestion">candidate suggestion</a>.</p>
+
+<h3 id="ac-use-quick-help">8.12. <code>ac-use-quick-help</code></h3>
+
+<p>Whether or not to use quick help.</p>
+
+<h3 id="ac-quick-help-delay">8.13. <code>ac-quick-help-delay</code></h3>
+
+<p>Delay time to show quick help in real number seconds.</p>
+
+<h3 id="ac-menu-height">8.14. <code>ac-menu-height</code></h3>
+
+<p>Specify an integer of lines of completion menu.</p>
+
+<h3 id="ac-quick-help-height">8.15. <code>ac-quick-help-height</code></h3>
+
+<p>Specify an integer of lines of quick help.</p>
+
+<h3 id="ac-candidate-limit">8.16. <code>ac-candidate-limit</code></h3>
+
+<p>Limit a number of candidates. Specifying an integer, the value will be a limit of candidates. <code>nil</code> means no limit.</p>
+
+<h3 id="ac-modes">8.17. <code>ac-modes</code></h3>
+
+<p>Specify major modes as a list of symbols that will be enabled automatically if <code>global-auto-complete-mode</code> is enabled.</p>
+
+<h3 id="ac-compatible-packages-regexp">8.18. <code>ac-compatible-packages-regexp</code></h3>
+
+<p>Specify a regexp that identifies starting completion or not for that package.</p>
+
+<h3 id="ac-trigger-commands">8.19. <code>ac-trigger-commands</code></h3>
+
+<p>Specify commands as a list of symbols that starts completion automatically. <code>self-insert-command</code> is one of default.</p>
+
+<h3 id="ac-trigger-commands-on-completing">8.20. <code>ac-trigger-commands-on-completing</code></h3>
+
+<p>Same as <a href="http://cx4a.org/software/auto-complete/manual.html#ac-trigger-commands"><code>ac-trigger-commands</code></a> expect this will be used on completing.</p>
+
+<h3 id="ac-trigger-key">8.21. <code>ac-trigger-key</code></h3>
+
+<p>Specify a <a href="http://cx4a.org/software/auto-complete/manual.html#Trigger_Key">trigger key</a>.</p>
+
+<h3 id="ac-auto-start">8.22. <code>ac-auto-start</code></h3>
+
+<p>Specify how completion will be started. <code>t</code> means always starting completion automatically. <code>nil</code> means never started automatically. An integer means completion will not be started until the value is more than a length of the completion target string.</p>
+
+<h3 id="ac-ignores">8.23. <code>ac-ignores</code></h3>
+
+<p>Specify a list of strings that stops completion.</p>
+
+<h3 id="ac-ignore-case">8.24. <code>ac-ignore-case</code></h3>
+
+<p>Specify how distinguish case. <code>t</code> means always ignoring case. <code>nil</code> means never ignoring case. <code>smart</code> in symbol means ignoring case only when the completion target string doesn't include upper characters.</p>
+
+<h3 id="ac-dwim">8.25. <code>ac-dwim</code></h3>
+
+<p>"Do What I Mean" function. <code>t</code> means:</p>
+
+<ul>
+<li>After selecting candidates, TAB will behave as RET</li>
+<li>TAB will behave as RET only on candidate remains</li>
+</ul>
+
+<h3 id="ac-use-menu-map">8.26. <code>ac-use-menu-map</code></h3>
+
+<p>Specify a special keymap (<code>ac-menu-map</code>) should be enabled when completion menu is displayed. <code>ac-menu-map</code> will be enabled when it is <code>t</code> and satisfy one of the following conditions:</p>
+
+<ul>
+<li><code>ac-auto-start</code> and <code>ac-auto-show-menu</code> are not <code>nil</code>, and completion menu is displayed after starting completion</li>
+<li>Completion menu is displayed by <code>auto-complete</code> command</li>
+<li>Completion menu is displayed by <code>ac-isearch</code> command</li>
+</ul>
+
+<h3 id="ac-use-overriding-local-map">8.27. <code>ac-use-overriding-local-map</code></h3>
+
+<p>Use only when operations is not affected. Internally it uses <code>overriding-local-map</code>, which is too powerful to use with keeping orthogonality. So don't use as much as possible.</p>
+
+<h3 id="ac-completion-face">8.28. <code>ac-completion-face</code></h3>
+
+<p>Face of inline completion.</p>
+
+<h3 id="ac-candidate-face">8.29. <code>ac-candidate-face</code></h3>
+
+<p>Face of completion menu background.</p>
+
+<h3 id="ac-selection-face">8.30. <code>ac-selection-face</code></h3>
+
+<p>Face of completion menu selection.</p>
+
+<h3 id="global-auto-complete-mode">8.31. <code>global-auto-complete-mode</code></h3>
+
+<p>Whether or not to use <code>auto-complete-mode</code> globally. It is <code>t</code> in general.</p>
+
+<h3 id="ac-user-dictionary">8.32. <code>ac-user-dictionary</code></h3>
+
+<p>Specify a dictionary as a list of string for <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Dictionary">completion by dictionary</a>.</p>
+
+<h3 id="ac-user-dictionary-files">8.33. <code>ac-user-dictionary-files</code></h3>
+
+<p>Specify a dictionary files as a list of string for <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Dictionary">completion by dictionary</a>.</p>
+
+<h3 id="ac-dictionary-directories">8.34. <code>ac-dictionary-directories</code></h3>
+
+<p>Specify a dictionary directories as a list of string for <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_Dictionary">completion by dictionary</a>.</p>
+
+<h3 id="ac-sources">8.35. <code>ac-sources</code></h3>
+
+<p>Specify sources as a list of <a href="http://cx4a.org/software/auto-complete/manual.html#Source">source</a>. This is a buffer local variable.</p>
+
+<h3 id="ac-completing-map">8.36. <code>ac-completing-map</code></h3>
+
+<p>Keymap for completion.</p>
+
+<h3 id="ac-menu-map">8.37. <code>ac-menu-map</code></h3>
+
+<p>Keymap for completion on completion menu. See also <a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-menu-map"><code>ac-use-menu-map</code></a>.</p>
+
+<h3 id="ac-mode-map">8.38. <code>ac-mode-map</code></h3>
+
+<p>Keymap for <code>auto-complete-mode</code> enabled buffers.</p>
+
+<h2 id="Extend">9. Extend</h2>
+
+<p>A meaning to extend <code>auto-complete-mode</code> is just defining a <a href="http://cx4a.org/software/auto-complete/manual.html#Source">source</a>. This section describe how to define a source.</p>
+
+<h3 id="Prototype">9.1. Prototype</h3>
+
+<p>Source basically takes a form of the following:</p>
+
+<pre><code>(defvar ac-source-mysource1
+  '((prop . value)
+    ...))
+</code></pre>
+
+<p>As you see, source is just an associate list. You can define a source by combining pairs of defined property and its value.</p>
+
+<h3 id="Example">9.2. Example</h3>
+
+<p>The most important property for source is <a href="http://cx4a.org/software/auto-complete/manual.html#candidates"><code>candidates</code></a> property. This property describes how to generate completion candidates by giving a function, an expression, or a variable. A result of evaluation should be a list of strings. Here is an example to generate candidates "Foo", "Bar", and "Baz":</p>
+
+<pre><code>(defvar ac-source-mysource1
+  '((candidates . (list "Foo" "Bar" "Baz"))))
+</code></pre>
+
+<p>Then add this source to <code>ac-sources</code> and use:</p>
+
+<pre><code>(setq ac-sources '(ac-source-mysource1))
+</code></pre>
+
+<p>It is successful if you have "Bar" and "Baz" by inserting "B". The example above has an expression <code>(list ...)</code> in <code>candidates</code> property. The expression specified there will not be byte-compiled, so you should not use an expression unless it is too simple, because it has a bad affection on performance. You should use a function instead maybe:</p>
+
+<pre><code>(defun mysource1-candidates ()
+  '("Foo" "Bar" "Baz"))
+
+(defvar ac-source-mysource1
+  '((candidates . mysource1-candidates)))
+</code></pre>
+
+<p>The function specified in <code>candidates</code> property will be called without any arguments on every time candidates updated. There is another way: a variable.</p>
+
+<h3 id="Initialization">9.3. Initialization</h3>
+
+<p>You may want to initialize a source at first time to complete. Use <code>init</code> property in these cases. As same as <code>candidates</code> property, specify a function without any parameters or an expression. Here is an example:</p>
+
+<pre><code>(defvar mysource2-cache nil)
+
+(defun mysource2-init ()
+  (setq mysource2-cache '("Huge" "Processing" "Is" "Done" "Here")))
+
+(defvar ac-source-mysource2
+  '((init . mysource2-init)
+    (candidates . mysource2-cache)))
+</code></pre>
+
+<p>In this example, <code>mysource2-init</code> function does huge processing, and stores the result into <code>mysource2-cache</code> variable. Then specifying the variable in <code>candidates</code> property, this source prevents huge processing on every time update completions. There are possible usage:</p>
+
+<ul>
+<li>Do <code>require</code></li>
+<li>Open buffers first of all</li>
+</ul>
+
+<h3 id="Cache">9.4. Cache</h3>
+
+<p>Caching strategy is important for <code>auto-complete-mode</code>. There are two major ways: <code>init</code> property and <code>cache</code> property that is described in this section. Specifying <code>cache</code> property in source definition, a result of evaluation of <code>candidates</code> property will be cached and reused the result as the result of evaluation of <code>candidates</code> property next time.</p>
+
+<p>Rewrite the example in previous section by using <code>cache</code> property.</p>
+
+<pre><code>(defun mysource2-candidates ()
+  '("Huge" "Processing" "Is" "Done" "Here"))
+
+(defvar ac-source-mysource2
+  '((candidates . mysource2-candidates)
+    (cache)))
+</code></pre>
+
+<p>There is no performance problem because this source has <code>cache</code> property even if <code>candidates</code> property will do huge processing.</p>
+
+<h4 id="Cache_Expiration">9.4.1. Cache Expiration</h4>
+
+<p>It is possible to keep among more wider scope than <code>init</code> property and <code>cache</code> property. It may be useful for remembering all function names which is rarely changed. In these cases, how can we clear cache property not at the expense of performance? This is true time use that functionality.</p>
+
+<p>Use <code>ac-clear-variable-after-save</code> to clear cache every time a buffer saved. Here is an example:</p>
+
+<pre><code>(defvar mysource3-cache nil)
+
+(ac-clear-variable-after-save 'mysource3-cache)
+
+(defun mysource3-candidates ()
+  (or mysource3-cache
+      (setq mysource3-cache (list (format "Time %s" (current-time-string))))))
+
+(defvar ac-source-mysource3
+  '((candidates . mysource3-candidates)))
+</code></pre>
+
+<p>Add this source to <code>ac-sources</code> and complete with "Time". You may see a time when completion has been started. After that, you also see the same time, because <code>mysource3-candidates</code> returns the cache as much as possible. Then, save the buffer once and complete with "Time" again. In this time, you may find a new time. An essence of this source is to use <code>ac-clear-variable-after-save</code> to manage a variable for cache.</p>
+
+<p>It is also possible to clear cache periodically. Use <code>ac-clear-variable-every-minute</code> to do that. A way to use is same to <code>ac-clear-variable-after-save</code> except its cache will be cleared every minutes. A builtin source <code>ac-source-functions</code> uses this functionality.</p>
+
+<h3 id="Action">9.5. Action</h3>
+
+<p><a href="http://cx4a.org/software/auto-complete/manual.html#Complete_by_RET">Complete by RET</a> will evaluate a function or an expression specified in <code>action</code> property. A builtin sources <code>ac-source-abbrev</code> and <code>ac-source-yasnippet</code> use this property.</p>
+
+<h3 id="Omni_Completion">9.6. Omni Completion</h3>
+
+<p><em>Omni Completion</em> is a type of completion which regards of a context of editing. A file name completion which completes with slashed detected and a member name completion in C/C++ with dots detected are omni completions. To make a source support for omni completion, use <code>prefix</code> property. A result of evaluation of <code>prefix</code> property must be a beginning point of completion target string. Retuning <code>nil</code> means the source is disabled within the context.</p>
+
+<p>Consider a source that completes mail addresses only after "To: ". First of all, define a mail address completion source as same as above.</p>
+
+<pre><code>(defvar ac-source-to-mailaddr
+  '((candidates . (list "foo1@example.com"
+                        "foo2@example.com"
+                        "foo3@example.com"))))
+
+(setq ac-sources '(ac-source-to-mailaddr))
+</code></pre>
+
+<p>Then enable completions only after "To: " by using <code>prefix</code> property. <code>prefix</code> property must be one of:</p>
+
+<ul>
+<li>Regexp</li>
+<li>Function</li>
+<li>Expression</li>
+</ul>
+
+<p>Specifying a regexp, <code>auto-complete-mode</code> thinks of a point of start of group 1 or group 0 as a beginning point of completion target string by doing <code>re-search-backward</code><sup id="footnote-ref:1"><a href="http://cx4a.org/software/auto-complete/manual.html#footnote:1" rel="footnote">[1]</a></sup> with the regexp. If you want to do more complicated, use a function or an expression instead. The beginning point that is evaluated here will be stored into <a href="http://cx4a.org/software/auto-complete/manual.html#ac-point"><code>ac-point</code></a>. In above example, regexp is enough.</p>
+
+<pre><code>^To: \(.*\)
+</code></pre>
+
+<p>A reason why capturing group 1 is skipping "To: ". By adding this into the source definition, the source looks like:</p>
+
+<pre><code>(defvar ac-source-to-mailaddr
+  '((candidates . (list "foo1@example.com"
+                        "foo2@example.com"
+                        "foo3@example.com"))
+    (prefix . "^To: \\(.*\\)")))
+</code></pre>
+
+<p>Add this source to <code>ac-sources</code> and then type "To: ". You will be able to complete mail addresses.</p>
+
+<h3 id="ac-define-source">9.7. <code>ac-define-source</code></h3>
+
+<p>You may use an utility macro called <code>ac-define-source</code> which defines a source and a command.</p>
+
+<pre><code>(ac-define-source mysource3
+  '((candidates . (list "Foo" "Bar" "Baz"))))
+</code></pre>
+
+<p>This expression will be expanded like:</p>
+
+<pre><code>(defvar ac-source-mysource3
+  '((candidates . (list "Foo" "Bar" "Baz"))))
+
+(defun ac-complete-mysource3 ()
+  (interactive)
+  (auto-complete '(ac-source-mysource3)))
+</code></pre>
+
+<p>A source will be defined as usual and in addition a command that completes with the source will be defined. Calling <code>auto-complete</code> without arguments will use <code>ac-sources</code> as default sources and with arguments will use the arguments as default sources. Considering compatibility, it is difficult to answer which you should use <code>defvar</code> and <code>ac-define-source</code>. Builtin sources are defined with <code>ac-define-sources</code>, so you can use them alone by binding some key to these commands such like <code>ac-complete-filename</code>. See also [this tips](#Completion<em>with</em>specific_source].</p>
+
+<h3 id="Source_Properties">9.8. Source Properties</h3>
+
+<h4 id="init">9.8.1. <code>init</code></h4>
+
+<p>Specify a function or an expression that is evaluated only once when completion is started.</p>
+
+<h4 id="candidates">9.8.2. <code>candidates</code></h4>
+
+<p>Specify a function, an expression, or a variable to calculate candidates. Candidates should be a list of string. If <a href="http://cx4a.org/software/auto-complete/manual.html#cache"><code>cache</code></a> property is enabled, this property will be ignored twice or later.</p>
+
+<h4 id="prefix">9.8.3. <code>prefix</code></h4>
+
+<p>Specify a regexp, a function, or an expression to find a point of completion target string for <a href="http://cx4a.org/software/auto-complete/manual.html#Omni_Completion">omni completion</a>. This source will be ignored when <code>nil</code> returned. If a regexp is specified, a start point of group 1 or group 2 will be used as a value.</p>
+
+<h4 id="requires">9.8.4. <code>requires</code></h4>
+
+<p>Specify a required number of characters of completion target string. If nothing is specified, <code>auto-complete-mode</code> uses <a href="http://cx4a.org/software/auto-complete/manual.html#ac-auto-start"><code>ac-auto-start</code></a> instead.</p>
+
+<h4 id="action">9.8.5. <code>action</code></h4>
+
+<p>Specify a function or an expression that is executed on <a href="http://cx4a.org/software/auto-complete/manual.html#Completion_by_RET">completion by RET</a>.</p>
+
+<h4 id="limit">9.8.6. <code>limit</code></h4>
+
+<p>Specify a limit of candidates. It overrides <code>ac-candidate-limit</code> partially.</p>
+
+<h4 id="symbol">9.8.7. <code>symbol</code></h4>
+
+<p>Specify a symbol of candidate meaning in one character string. The symbol will be any character, but you should follow the rule:</p>
+
+<p></p><table>
+	<thead><tr>
+		<th>Symbol</th>
+		<th>Meaning</th>
+	</tr></thead>
+	<tbody>
+		<tr>
+			<td>s</td>
+			<td>Symbol</td>
+		</tr>
+		<tr>
+			<td>f</td>
+			<td>Function, Method</td>
+		</tr>
+		<tr>
+			<td>v</td>
+			<td>Variable</td>
+		</tr>
+		<tr>
+			<td>c</td>
+			<td>Constant</td>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>Abbreviation</td>
+		</tr>
+		<tr>
+			<td>d</td>
+			<td>Dictionary</td>
+		</tr>
+	</tbody>
+</table><p></p>
+
+<h4 id="summary">9.8.8. <code>summary</code></h4>
+
+<p>Specify a summary of candidate in string. It should be used for summarizing the candidate in short string.</p>
+
+<h4 id="cache">9.8.9. <code>cache</code></h4>
+
+<p>Use <a href="http://cx4a.org/software/auto-complete/manual.html#cache">cache</a>.</p>
+
+<h4 id="require">9.8.10. <code>require</code></h4>
+
+<p>Specify an integer or <code>nil</code>. This source will be ignored when the integer value is lager than a length of completion target string. <code>nil</code> means nothing ignored.</p>
+
+<h4 id="candidate-face">9.8.11. <code>candidate-face</code></h4>
+
+<p>Specify a face of candidate. It overrides <a href="http://cx4a.org/software/auto-complete/manual.html#ac-candidate-face"><code>ac-candidate-face</code></a> partially.</p>
+
+<h4 id="selection-face">9.8.12. <code>selection-face</code></h4>
+
+<p>Specify a face of selection. It overrides <a href="http://cx4a.org/software/auto-complete/manual.html#ac-selection-face"><code>ac-selection-face</code></a> partially.</p>
+
+<h4 id="depends">9.8.13. <code>depends</code></h4>
+
+<p>Specify a list of features (which are <code>require</code>d) that the source is depending.</p>
+
+<h4 id="available">9.8.14. <code>available</code></h4>
+
+<p>Specify a function or an expression that describe the source is available or not.</p>
+
+<h3 id="Variables">9.9. Variables</h3>
+
+<p>Here is a list of often used variables.</p>
+
+<h4 id="ac-buffer">9.9.1. <code>ac-buffer</code></h4>
+
+<p>A buffer where completion started.</p>
+
+<h4 id="ac-point">9.9.2. <code>ac-point</code></h4>
+
+<p>A start point of completion target string.</p>
+
+<h4 id="ac-prefix">9.9.3. <code>ac-prefix</code></h4>
+
+<p>A string of completion target.</p>
+
+<h4 id="ac-limit">9.9.4. <code>ac-limit</code></h4>
+
+<p>A limit of candidates. Its value may be one of <a href="http://cx4a.org/software/auto-complete/manual.html#ac-candidate-limit"><code>ac-candidate-limit</code></a> and <a href="http://cx4a.org/software/auto-complete/manual.html#limit"><code>limit</code></a> property.</p>
+
+<h4 id="ac-candidates">9.9.5. <code>ac-candidates</code></h4>
+
+<p>A list of candidates.</p>
+
+<h2 id="Trouble_Shooting">10. Trouble Shooting</h2>
+
+<h3 id="Response_Latency">10.1. Response Latency</h3>
+
+<p>To keep much responsibility is very important for <code>auto-complete-mode</code>. However it is well known fact that a performance is a trade off of functionalities. List up options related to the performance.</p>
+
+<h4 id="trouble_ac-auto-start">10.1.1. <code>ac-auto-start</code></h4>
+
+<p>For a larger number, it reduces a cost of generating completion candidates. Or you can remove the cost by setting <code>nil</code> and you can use when you truly need. See <a href="http://cx4a.org/software/auto-complete/manual.html#Not_to_complete_automatically">not to complete automatically</a> for more details.</p>
+
+<h4 id="trouble_ac-delay">10.1.2. <code>ac-delay</code></h4>
+
+<p>For a larger number, it reduces a cost of starting completion.</p>
+
+<h4 id="trouble_ac-auto-show-menu">10.1.3. <code>ac-auto-show-menu</code></h4>
+
+<p>For a larger number, it reduces a displaying cost of completion menu.</p>
+
+<h4 id="trouble_ac-use-comphist">10.1.4. <code>ac-use-comphist</code></h4>
+
+<p>Setting <a href="http://cx4a.org/software/auto-complete/manual.html#ac-use-comphist"><code>ac-use-comphist</code></a> to <code>nil</code> to disable <a href="http://cx4a.org/software/auto-complete/manual.html#Candidate_Suggestion">candidate suggestion</a>, it reduces a cost of suggestion.</p>
+
+<h4 id="trouble_ac-candidate-limit">10.1.5. <code>ac-candidate-limit</code></h4>
+
+<p>For a property number, it reduces much computation of generating candidates.</p>
+
+<h3 id="Completion_menu_is_disrupted">10.2. Completion menu is disrupted</h3>
+
+<p>There is two major cases.</p>
+
+<h4 id="Column_Computation_Case">10.2.1. Column Computation Case</h4>
+
+<p><code>auto-complete-mode</code> tries to reduce a cost of computation of columns to show completion menu correctly by using a optimized function at the expense of accuracy. However, it probably causes a menu to be disrupted. Not to use the optimized function, evaluate the following code:</p>
+
+<pre><code>(setq popup-use-optimized-column-computation nil)
+</code></pre>
+
+<h4 id="Font_Case">10.2.2. Font Case</h4>
+
+<p>There is a problem when render <a href="http://ossipedia.ipa.go.jp/ipafont/">IPA font</a> with Xft in Ubuntu 9.10. Use <a href="http://dicey.org/vlgothic/">VL gothic</a>, which renders more suitably. Or disable Xft, then it can render correctly.</p>
+
+<p>We don't good answers now, but you may shot the troubles by changing font size with <code>set-face-font</code>. For instance, completion menu may be disrupted when displaying the menu including Japanese in NTEmacs. In such case, it is worth to try to evaluate the following code to fix it:</p>
+
+<pre><code>(set-face-font 'ac-candidate-face "MS Gothic 11")
+(set-face-font 'ac-selection-face "MS Gothic 11")
+</code></pre>
+
+<h2 id="Known_Bugs">11. Known Bugs</h2>
+
+<h3 id="Auto_completion_will_not_be_started_in_a_buffer_flyspell-mode_enabled">11.1. Auto completion will not be started in a buffer <code>flyspell-mode</code> enabled</h3>
+
+<p>A way of delaying processes of <code>flyspell-mode</code> disables auto completion. You can avoid this problem by <code>M-x ac-flyspell-workaround</code>. You can write the following code into your <code>~/.emacs</code>.</p>
+
+<pre><code>(ac-flyspell-workaround)
+</code></pre>
+
+<h2 id="Reporting_Bugs">12. Reporting Bugs</h2>
+
+<p>Visit <a href="http://cx4a.org/redmine/projects/auto-complete-mode">Auto Complete Mode Bug Tracking System</a> and create a new ticket.</p><div class="footnotes"><hr>
+<ol>
+<li id="footnote:1">
+<p>Strictly <code>re-search-backward</code> with the added adding <code>28d397e87306b8631f3ed80d858d35f0=</code> at the end <a href="http://cx4a.org/software/auto-complete/manual.html#footnote-ref:1" rev="footnote">↩</a></p>
+</li></ol>
+</div>
+
+</div><div id="footer"><hr><p>Tomohiro Matsuyama &lt;<a href="mailto: tomo@cx4a.org">tomo@cx4a.org</a>&gt;<br>
+<a href="http://cx4a.org/">http://cx4a.org/</a><br>
+<a href="http://www.gnu.org/"><img src="./Auto Complete Mode - User Manual_files/gnubanner.png"></a>
+<a href="http://www.gnu.org/software/emacs/"><img src="./Auto Complete Mode - User Manual_files/emacslogo.png"></a>
+<a href="http://www.debian.org/"><img src="./Auto Complete Mode - User Manual_files/debianlogo.png"></a>
+<a href="http://www.fsf.org/register_form?referrer=8504"><img src="./Auto Complete Mode - User Manual_files/fsf_button.png" alt="[FSF Associate Member]" width="88" height="31"></a></p></div>
+
+</body></html>
