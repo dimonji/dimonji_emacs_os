@@ -1,4 +1,5 @@
 ./auto-save-list/*.*
-ac-comphist.dat
+*.dat
 *.last
 *~
+#*
