@@ -1,0 +1,201 @@
+/* Suppression d'éléments */
+
+@media print  { .noprint  { display: none; } }
+@media screen { .noscreen { display: none; } }
+
+/* Liens visités ou visitables.  */
+
+:link, :visited {
+  text-decoration: none;
+  border-bottom: 1px dotted #bbb;
+}
+
+:link {
+  color: #b00;
+}
+
+:visited {
+  color: #844;
+}
+
+:link:hover, :visited:hover {
+  background: #eee url("/background.gif");
+  color: #000;
+}
+
+/* Généralités.  */
+
+div.title {
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  color: #842;
+}
+
+img {
+  border: none;
+}
+
+.literal, .literal-block {
+  background: #ffd;
+}
+
+.ruler {
+  height: 1px;
+  border: none;
+  background: url("/margin.gif");
+}
+
+p.error {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f22;
+}
+
+/* Organisation du gabarit.  */
+
+td.menu {
+  width: 20%;
+  background: url("/background.png");
+}
+
+td.body {
+  width: 600px;
+}
+
+td.vr {
+  width: 1px;
+  margin-left: .2cm;
+  background: url("/caption.png");
+}
+
+/* Menu de chaque site.  */
+
+.menu {
+  font-family: Arial;
+  font-size: small;
+}
+
+li.caption {
+  list-style-type: none;
+  margin-top: .6cm;
+  margin-bottom: .3cm;
+  margin-left: -.6cm;
+}
+
+li.entry {
+  list-style-type: none;
+  border: medium;
+}
+
+/* Flèches de navigation.  */
+
+td.arrow {
+  font-weight: bold;
+  font-size: 40pt;
+  color: #ccc;
+}
+
+td.title {
+  font-size: 24pt;
+}
+
+/* Tableaux listant fichiers ou courriels.  */
+
+.no, .size {
+  text-align: right;
+}
+
+.from, .subject {
+  text-align: left;
+}
+
+.field {
+  font-weight: bold;
+}
+
+/* Courriels.  */
+
+table.email {
+  outline: 3px thick #000;
+  background-image: url("/margin.png");
+  border-spacing: .5cm .1cm;
+}
+
+.attachment {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Allout et corps indentés de courriels.  */
+
+.level0 { color: #000000; }
+.level1 { color: #0000A0; }
+.level2 { color: #006000; }
+.level3 { color: #806000; }
+.level4 { color: #8000A0; }
+.level5 { color: #0060A0; }
+.level6 { color: #8060A0; }
+.level7 { color: #402010; }
+.level8 { color: #102040; }
+.level9 { color: #A06080; }
+.level10 { color: #F00020; }
+.level11 { color: #0000A0; }
+.level12 { color: #006000; }
+.level13 { color: #806000; }
+.level14 { color: #8000A0; }
+.level15 { color: #0060A0; }
+.level16 { color: #8060A0; }
+.level17 { color: #402010; }
+.level18 { color: #102040; }
+.level19 { color: #A06080; }
+.level20 { color: #F00020; }
+.level21 { color: #0000A0; }
+.level22 { color: #006000; }
+.level23 { color: #806000; }
+.level24 { color: #8000A0; }
+.level25 { color: #0060A0; }
+.level26 { color: #8060A0; }
+.level27 { color: #402010; }
+.level28 { color: #102040; }
+.level29 { color: #A06080; }
+
+/* Enriched.  */
+
+.flushleft {
+  text-align: left;
+}
+
+.flushright {
+  text-align: right;
+}
+
+.flushboth {
+  text-align: justify;
+}
+
+.indent {
+  left-margin: 2cm;
+}
+
+.indentright {
+  right-margin: 2cm;
+}
+
+pre.excerpt {
+  font: italic;
+  left-margin: 2cm;
+  right-margin: 2cm;
+}
+
+/* Tweet list.  */
+
+#twitter_update_list li {
+  list-style-type: none;
+  border: groove;
+  padding: .8em;
+  margin: 2em;
+  background-color: #ddd;
+}

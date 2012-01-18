@@ -1,1 +1,0 @@
-../../dist/yasnippet/dropdown-list.el
