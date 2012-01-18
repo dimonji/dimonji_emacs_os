@@ -1,1 +1,1 @@
-/home/furzenko/.emacs.d/dist/pymacs/pymacs.el
+../dist/pymacs/pymacs.el
