@@ -1,14 +1,23 @@
 Draft!!!!
-Структура проекта - директории:
-    dist - каталог с дистрибутивами пакетов
-    lib - конфигурационные файлы модулей и плагинов
-    plugins - отдельные модули
-    init - файлы загрузки элементов системы
-    tmp - временные файлы
-
-Зависимости пакетов
-    rope
-    ropemode
-    ropemaks
-    pyflakes
-    pymacs
+Рабочая копия сборки emacs под python-dev process
+Особенности:
+    key-bindings:
+        C+, prev buffer
+        C+. next buffer
+        M+up - window navigation
+        M+left - window navigation
+        M+right - window navigation
+        M+down - window navigation
+    display customizations:
+        tango dark theme
+        whitespace mode
+        80 character highlight
+    python mode customizations:
+        installed Yasnippet
+                  Autocompletion
+                  Rope
+                  ropemacs
+                  ropemode
+                  lambda-mode
+                  autocompletion (if rope project create and open)
+                  Pymacs
