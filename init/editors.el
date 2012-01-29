@@ -1,4 +1,5 @@
 ;; ibuffer by default
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 ;; Ido mode with fuzzy matching
 (require 'ido)
@@ -13,7 +14,7 @@
 ;; Auto Completion
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories
-	     (concat emacs-d "autocomplete/ac-dict"))
+	     (concat emacs-d "auto-complete/ac-dict"))
 (ac-config-default)
 
 ;; Yasnippet - force the loading of the custom version of yasnippet
@@ -32,6 +33,9 @@
 (yas/load-directory (concat emacs-d "exten/yasnippet/snippets"))
 (setq yas/prompt-functions '(yas/dropdown-prompt yas/ido-prompt yas/x-prompt))
 (setq yas/wrap-around-region 'cua)
+
+;; Eproject project management with emacs
+;; (require 'eproject)
 
 ;; code borrowed from http://emacs-fu.blogspot.com/2010/01/duplicating-lines-and-commenting-them.html
 (defun djcb-duplicate-line (&optional commentfirst)
@@ -128,21 +132,22 @@ original" (interactive)
   (setq deactivate-mark nil)
 )
 
-;;(global-set-key (kbd "M-<up>") 'move-text-up)
-;;(global-set-key (kbd "M-<down>") 'move-text-down)
+(global-set-key (kbd "s-<up>") 'move-text-up)
+(global-set-key (kbd "s-<down>") 'move-text-down)
 
-;;(add-hook 'python-mode-hook
-;;	  (lambda ()
-;;	    (define-key python-mode-map (kbd "M-<right>")
-;;	      'balle-python-shift-right)
-;;	    (define-key python-mode-map (kbd "M-<left>")
-;;	      'balle-python-shift-left))
-;;	  )
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (define-key python-mode-map (kbd "s-<right>")
+	      'balle-python-shift-right)
+	    (define-key python-mode-map (kbd "s-<left>")
+	      'balle-python-shift-left))
+	  )
 
 ;; Other useful stuff
 
 ; delete seleted text when typing
 (delete-selection-mode 1)
+
 
 ;; highlight current line
 (global-hl-line-mode 1)
@@ -151,9 +156,6 @@ original" (interactive)
 ; highlight brackets
 (show-paren-mode t)
 
-;; Highlight indentation
-(require 'highlight-indentation)
-(add-hook 'python-mode-hook 'highlight-indentation)
 
 ;; Line numbering
 (setq linum-format "%4d")
@@ -175,14 +177,13 @@ original" (interactive)
                     (list #'autopair-default-handle-action
                           #'autopair-python-triple-quote-action))))
 
-(require 'lambda-mode)
-(add-hook 'python-mode-hook 'lambda-mode 1)
-(setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
+;(require 'lambda-mode)
+;(add-hook 'python-mode-hook 'lambda-mode 1)
+;(setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
 
-(custom-set-variables '(global-whitespace-mode t))
 (setq tab-width 4)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 114 118 12 126 130))
-(setq indent-tabs-mode nil)
+(setq indent-tabs-mode t)
 (setq whitespace-display-mappings
  '(
    (space-mark 32 [183] [46]) ; normal space,
@@ -191,12 +192,12 @@ original" (interactive)
 ))
 
 (custom-set-variables
- '(global-whitespace-mode t)
+ '(global-whitespace-mode nil)
  '(whitespace-line-column 79))
 (custom-set-faces
  '(whitespace-empty ((t (:foreground "gray0"))))
  '(whitespace-hspace ((((class color) (background dark)) (:foreground "gray0"))))
- '(whitespace-indentation ((t (:foreground "gray10"))))
+ '(whitespace-indentation ((t (:foreground "red"))))
  '(whitespace-line ((t (:foreground "violet"))))
  '(whitespace-space ((t (:foreground "gray0"))))
  '(whitespace-space-after-tab ((t (:foreground "firebrick"))))
@@ -205,16 +206,19 @@ original" (interactive)
  '(whitespace-trailing ((t (:foreground "red4" :weight bold)))))
 
 (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
+(setq-default py-indent-offset 4)
 (column-number-mode t)
 (display-time-mode t)
 
 (setq fci-rule-width 1)
 (setq fci-rule-color "darkblue")
-(setq fci-rule-column 80)
+(setq fci-rule-column 78)
 (require 'fill-column-indicator)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
 
-
+;; Highlight indentation
+(require 'highlight-indentation)
+(add-hook 'python-mode-hook 'highlight-indentation)
 
 (provide 'editors)

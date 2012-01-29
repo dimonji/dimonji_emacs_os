@@ -9,12 +9,15 @@
 ;; Rope bindings
 (add-hook 'python-mode-hook
 	  (lambda ()
-	    (define-key py-mode-map "\C-ci" 'rope-auto-import)
-	    (define-key py-mode-map "\C-c\C-d" 'rope-show-calltip))
+	    (define-key python-mode-map "\C-ci" 'rope-auto-import)
+	    (define-key python-mode-map "\C-c\C-d" 'rope-show-calltip))
 	  )
 (windmove-default-keybindings 'meta)
-(global-set-key [?\C-,] 'previous-buffer)
-(global-set-key [?\C-.] 'next-buffer)
+(global-set-key [?\M-,] 'previous-buffer)
+(global-set-key [?\M-.] 'next-buffer)
 (global-set-key [?\C-z] 'shell) ;; ну… shell
+
+(global-set-key [f2] 'flymake-goto-prev-error)
+(global-set-key [f3] 'flymake-goto-next-error)
 
 (provide 'keybind)

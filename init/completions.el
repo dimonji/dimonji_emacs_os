@@ -1,7 +1,23 @@
+;;; epy-completion.el --- A few common completion tricks
+
+;; Pairing parentheses
+
+;; All languages:
+(setq skeleton-pair t)
+(global-set-key "(" 'skeleton-pair-insert-maybe)
+(global-set-key "[" 'skeleton-pair-insert-maybe)
+(global-set-key "{" 'skeleton-pair-insert-maybe)
+(global-set-key "\"" 'skeleton-pair-insert-maybe)
+
+;; Just python
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (define-key python-mode-map "'" 'skeleton-pair-insert-maybe)))
+
 ;; Live completion with auto-complete
 ;; (see http://cx4a.org/software/auto-complete/)
 (require 'auto-complete-config nil t)
-(add-to-list 'ac-dictionary-directories (concat emacs-d "elpa-to-submit/autocomplete/dict/"))
+(add-to-list 'ac-dictionary-directories (concat emacs-d "exten/auto-complete/dict/"))
 ;; Do What I Mean mode
 (setq ac-dwim t)
 (ac-config-default)
